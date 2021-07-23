@@ -1,0 +1,68 @@
+.race{
+	text-align: center;
+}
+
+#racetrack{
+	background: #616161;
+	height: 700px;
+	background-image: repeating-linear-gradient(90deg,transparent 0 30px,#82828242 30px 32px);
+}
+.leagueName{
+	margin: 5px;
+}
+
+.gpText{
+	margin: 5px;
+}
+
+.gridcontainer{
+	padding-top: 20px;
+	margin-left: 15px;
+}
+
+.car{
+	display: block;
+	position: relative;
+	width:37%; 
+	top: -5px;
+}
+
+.driverContainer {
+  width: 260px;
+  margin-left : -200px;
+}
+
+.textcontainer {
+  float: left;
+  width: 82px;
+}
+
+.text{
+	margin: 0px;
+	float: right;
+	padding-right: 5px;
+	opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+input[type='button']{
+	background-color: green;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+}
+
+input:active{
+	position: relative;
+	top: 1px;
+}
+
+input#reset{
+	color: black;
+	background-color: lightgrey;
+}
+
+.clearfix:after{
+	content: '';
+}
