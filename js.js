@@ -56,7 +56,7 @@ $( document ).ready(function() {
 				var teamCar = [];
 				teamCar["Alpha"] = "top_b.png";
 				teamCar["Beta"]  = "top_g.png";
-				teamCar["Delta"] = "top_P.png";
+				teamCar["Delta"] = "top_p.png";
 				teamCar["Zeta"]  = "top_o.png";
 				teamCar["Omega"] = "top_y.png";
 				teamCar["Green Heaven Team (GHT)"] = "top_w.png";
