@@ -5,20 +5,25 @@
 </head>
 <body class="race">
 	<!--<input type='button' value='Animar Grid Fake' id='startAnimationFake'>-->
+	
+	<div style="margin:10px">
+		Tempo da animação:
+		<input type='range' min="1" max="10" step="1" value="3" id="durationSelector" style="margin-right: 50px;">
+		Seletor de grid:
+		<select id="gridSelector" style="margin-right: 50px;">
+			<option value="A" selected>Grid A</option>
+			<option value="B">Grid B</option>
+			<option value="C">Grid C</option>
+			<option value="D">Grid D</option>
+		</select>
+		
+		Tipo de movimento:
+		<select id="movementType"  style="margin-right: 50px;">
+			<option value="linear">linear</option>
+			<option value="swing" selected>swing</option>
+		</select>
+	</div>
 	<input type='button' value='Animar Grid' id='startAnimation'>
-	<input type='range' min="1" max="10" step="1" value="3" id="durationSelector">
-	
-	<select id="movementType">
-		<option value="linear">linear</option>
-		<option value="swing" selected>swing</option>
-	</select>
-	<select id="gridSelector">
-		<option value="A" selected>A</option>
-		<option value="B">B</option>
-		<option value="C">C</option>
-		<option value="D">D</option>
-	</select>
-	
 	<h3 class='leagueName'>Liga CVB Grid A</h3>
 	<h3 id='gpText' class='gpText'>--------</h3>
 	

@@ -135,7 +135,7 @@ $( document ).ready(function() {
 					
 					console.log('animation max size: ',max)
 					let carWidth = $('#car1').width();
-					let maxDistance = (($('#racetrack').width() - carWidth)/100)*90;
+					let maxDistance = (($('#racetrack').width() - carWidth)/100)*80;
 					console.log('stages preAnimacao ', stages);
 					$("#gpText").html(stages[0]);
 					for(i=0;i<standingCalc.length;i++){
