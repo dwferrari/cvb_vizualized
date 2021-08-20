@@ -32,7 +32,9 @@
 	  }
 
 	  document.getElementById("timer").innerHTML = sDays + "d " + sHours + "h " + sMinutes + "m " + sSeconds + "s";
-
+      
+	  document.title = sDays + "d " + sHours + "h " + sMinutes + "m " + sSeconds + "s";
+	  
 	  if (distance < 0) {
 		clearInterval(x);
 		document.getElementById("timer").innerHTML = "Its Time";
