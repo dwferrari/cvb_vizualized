@@ -1,5 +1,7 @@
-<p id="timer" style=" margin: 0;  position: absolute;  top: 50%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;"></p>
-
+<body style="background-color: grey;">
+<p id="text" style=" margin: 0;  position: absolute;  top: 40%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">Tempo Restante</p>
+<p id="timer" style=" margin: 0;  position: absolute;  top: 50%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">XXd XXh XXm XXs</p>
+</body>
 <script>
 	var countDownDate = new Date("Sep 18, 2021 00:00:00").getTime();
 
@@ -37,7 +39,8 @@
 	  
 	  if (distance < 0) {
 		clearInterval(x);
-		document.getElementById("timer").innerHTML = "Its Time";
+		document.getElementById("timer").innerHTML = "Liberado";
+		document.getElementById("text").innerHTML = "";
 	  }
 	}, 1000);
 </script>
