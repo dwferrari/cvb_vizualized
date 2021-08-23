@@ -1,12 +1,23 @@
 <body style="background-color: grey;">
-<p id="text" style=" margin: 0;  position: absolute;  top: 40%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">Tempo Restante</p>
-<p id="timer" style=" margin: 0;  position: absolute;  top: 50%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">XXd XXh XXm XXs</p>
+	<p id="textCrono" style=" margin: 0;  position: absolute;  top: 30%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 50px; font-family: Arial, Helvetica, sans-serif;">
+		Tempo Passado
+	</p>
+	<p id="crono" style=" margin: 0;  position: absolute;  top: 40%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">
+		XXd XXh XXm XXs
+	</p>
+	<p id="textTimer" style=" margin: 0;  position: absolute;  top: 60%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 50px; font-family: Arial, Helvetica, sans-serif;">
+		Tempo Restante
+	</p>
+	<p id="timer" style=" margin: 0;  position: absolute;  top: 70%;  left: 50%;  -ms-transform: translate(-50%, -50%);  transform: translate(-50%, -50%); font-size: 80px; font-family: Arial, Helvetica, sans-serif;">
+		XXd XXh XXm XXs
+	</p>
 </body>
 <script>
 	var countDownDate = new Date("Sep 18, 2021 00:00:00").getTime();
+	var startTime = new Date("Aug 17, 2021 23:59:59").getTime();
 
 	var x = setInterval(function() {
-
+	
 	  var now = new Date().getTime();
 	  var distance = countDownDate - now;
 
@@ -32,15 +43,41 @@
       if(sSeconds.length == 1){
           sSeconds = "0" + sSeconds;
 	  }
+	  
+	  var pdistance = now - startTime;
+	  
+	  var pdays = Math.floor(pdistance / (1000 * 60 * 60 * 24));
+	  var phours = Math.floor((pdistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var pminutes = Math.floor((pdistance % (1000 * 60 * 60)) / (1000 * 60));
+	  var pseconds = Math.floor((pdistance % (1000 * 60)) / 1000);
+	  
+	  var psDays    = pdays.toString();
+	  var psHours   = phours.toString();
+	  var psMinutes = pminutes.toString();
+	  var psSeconds = pseconds.toString();
+
+      if(psDays.length == 1){
+          psDays = "0" + psDays;
+	  }
+      if(psHours.length == 1){
+          psHours = "0" + psHours;
+	  }
+      if(psMinutes.length == 1){
+          psMinutes = "0" + psMinutes;
+	  }
+      if(psSeconds.length == 1){
+          psSeconds = "0" + psSeconds;
+	  }
 
 	  document.getElementById("timer").innerHTML = sDays + "d " + sHours + "h " + sMinutes + "m " + sSeconds + "s";
+	  document.getElementById("crono").innerHTML = psDays + "d " + psHours + "h " + psMinutes + "m " + psSeconds + "s";
       
 	  document.title = sDays + "d " + sHours + "h " + sMinutes + "m " + sSeconds + "s";
 	  
 	  if (distance < 0) {
 		clearInterval(x);
-		document.getElementById("timer").innerHTML = "Liberado";
-		document.getElementById("text").innerHTML = "";
+		document.getElementById("timer").innerHTML = "Terminou!!";
+		document.getElementById("textTimer").innerHTML = "";
 	  }
 	}, 1000);
 </script>
